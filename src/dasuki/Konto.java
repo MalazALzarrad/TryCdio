@@ -1,6 +1,9 @@
 package dasuki;
 
-
+/**
+ *@ Malaz ALzarrad
+ * Denne klasse har ansvaret for at styre spillernes individuelle score.
+ */
 public class Konto {
 
     int Balance;
@@ -16,8 +19,13 @@ public class Konto {
     int ThePit = 50;
     int Goldmine = 650;
 
+    /**
+     * Kontokonstruktør. Opretter et kontoobjekt med en startsaldo på 1000
+     *  Balancer spillerens mængde af guldmønter.
+     */
     public Konto() {
         Balance = 1000;
+
     }
 
 
@@ -69,6 +77,7 @@ public class Konto {
     public void setBalance(int point) {
         Balance = point;
         minBalance();
+
     }
 
     public int getBalance() {
@@ -76,14 +85,17 @@ public class Konto {
     }
 
 
+    int MIN = 0;
+
     public void minBalance() {
-        int MIN = 0;
-        if (Balance <= MIN) {
+        if (Balance < MIN)
             Balance = 0;
-        }
     }
+
 
     public String toString() {
         return Integer.toString(Balance);
     }
+
+
 }

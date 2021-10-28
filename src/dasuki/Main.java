@@ -9,6 +9,7 @@ public class Main {
 
         Game game = new Game();
 
+
         int optionSelected;
 
         while (true) {
@@ -17,13 +18,14 @@ public class Main {
             Scanner sc = new Scanner(System.in);
             optionSelected = sc.nextInt();
 
-            while (optionSelected > 4 || optionSelected < 0) {
+            while (optionSelected > 5 || optionSelected < 0) {
 
                 System.out.print("Option entered invalid, please enter a number from 1 to 5: ");
                 optionSelected = sc.nextInt();
             }
 
-            if (optionSelected == 4) {
+
+            if (optionSelected == 5) {
                 System.out.println("Exiting Spill");
                 break;
             }
@@ -36,6 +38,7 @@ public class Main {
                 System.out.println("Spillet sluttede .");
                 break;
             }
+
         }
     }
 }

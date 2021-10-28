@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class Dice {
 
-    private final static int numberOfSides = 6;
+    public final static int numberOfSides = 6;
 
    public int rollDice() {
 
