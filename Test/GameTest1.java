@@ -15,30 +15,14 @@ class GameTest1 {
 
     @Test
     void playOneRound() {
-        for (int i = 0; i < 100; i++) {
+        do {
             game.playOneRound(DD, B1);
             Assertions.assertTrue(B1.getBalance() >= 0);
             Assertions.assertFalse(B1.getBalance() < 0);
-
             System.out.println(B1.getBalance());
-
-        }
+        } while (B1.getBalance() <= 3000);
     }
-
 }
 
 
 
-/* @Test
-   void playOneRound() {
-        for (int i = 0; i < 1000; i++) {
-            int K = B.getBalance();
-            Assertions.assertTrue(K >= 0 && K < 3000);
-            //   Assertions.assertFalse(m0 < 0);
-            //Assertions.assertTrue(K < 0);
-        }
-    }
-*//*
-
-
-}*/
