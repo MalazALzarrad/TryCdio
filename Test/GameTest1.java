@@ -1,6 +1,7 @@
-/*
-package dasuki;
-
+import dasuki.Dice;
+import dasuki.Game;
+import dasuki.Konto;
+import dasuki.Spiller;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -14,24 +15,20 @@ class GameTest1 {
 
     @Test
     void playOneRound() {
+        for (int i = 0; i < 100; i++) {
+            game.playOneRound(DD, B1);
+            Assertions.assertTrue(B1.getBalance() >= 0);
+            Assertions.assertFalse(B1.getBalance() < 0);
 
-     game.playOneRound(DD,B1);
-        for (int i = 0; i < 1000; i++) {
-            int FørsteTerningKast = dice.rollDice();
-            int AndenTerningKast = dice.rollDice();
-            int m = FørsteTerningKast + AndenTerningKast;
-            if (m > 0) {
+            System.out.println(B1.getBalance());
 
-                System.out.println();
-                Assertions.assertTrue(B1.getBalance() >= 0 && B1.getBalance() < 3000);
-                //   Assertions.assertFalse(m0 < 0);
-                //Assertions.assertTrue(K < 0);
-            }
         }
-
     }
 
-     */
+}
+
+
+
 /* @Test
    void playOneRound() {
         for (int i = 0; i < 1000; i++) {

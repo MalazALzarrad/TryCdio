@@ -6,11 +6,12 @@ import java.util.*;
 
 public class Game {
 
+    private Scanner sc = new Scanner(System.in);
     private Spiller P1;
-    private Konto B1;
+    private Konto B1 = new Konto();
     private Spiller P2;
-    private Konto B2;
-    public Dice dice;
+    private Konto B2 = new Konto();
+    public Dice dice = new Dice();
 
 
     void selectGameOption(int optionSelected) {
@@ -50,7 +51,7 @@ public class Game {
         String P1Navn;
         String P2Navn;
 
-        Scanner sc = new Scanner(System.in);
+
         System.out.print("Indtast venligst første spillers navn: ");
         P1Navn = sc.nextLine();
         System.out.print("Indtast venligst anden spillers navn: ");
@@ -59,14 +60,12 @@ public class Game {
 
         P1 = new Spiller(P1Navn);
         P2 = new Spiller(P2Navn);
-        B1 = new Konto();
-        B2 = new Konto();
-        dice = new Dice();
     }
 
 
     public void playOneRound(Spiller P, Konto B) {
-        B.setBalance(B2.getBalance());
+
+
         int result;
         int FørsteTerningKast = dice.rollDice();
         int AndenTerningKast = dice.rollDice();
@@ -174,10 +173,12 @@ public class Game {
         if (IndsatBalance < 0) {
             System.out.println("ugyldig værdi");
             System.out.println("din blance må aldrig komme under null derfor sættes på " + Test);
+            B.setBalance(1000);// I put this to put the Balance equal to 1000 everytime I need to do test2 to test balance
         }
         if (IndsatBalance >= 0) {
             System.out.println("gyldig værdi");
             System.out.println("din blance sættes på " + Test);
+            B.setBalance(1000);// I put this to put the Balance equal to 1000 everytime I need to do test2 to test balance
         }
 
 

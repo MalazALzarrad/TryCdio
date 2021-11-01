@@ -5,11 +5,11 @@ public class Spiller {
 
 
 
-    Spiller(String name) {
+    public Spiller(String name) {
         this.name = name;
     }
 
-    String getnavn() {
+    public String getnavn() {
         return name;
     }
 
